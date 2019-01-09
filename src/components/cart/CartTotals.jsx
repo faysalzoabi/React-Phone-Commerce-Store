@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import {clearItems, addData} from '../../store/actions';
-
+import PaypalButton from './PaypalButton'
 export class CartTotals extends Component {
 
   clearCart = () => {
@@ -11,7 +11,7 @@ export class CartTotals extends Component {
       
   }
   render() {
-      const{cartSubTotal,cartTax,cartTotal} = this.props
+      const{cartSubTotal,cartTax,cartTotal, history} = this.props
     return (
       <React.Fragment>
         <div className="container-fluid">
@@ -39,7 +39,7 @@ export class CartTotals extends Component {
                         total: </span>
                     <strong>$ {cartTotal}</strong>
                     </h5>
-                    
+                    <PaypalButton total={cartTotal} history={history}/>
                 </div>
             </div>
         </div>
