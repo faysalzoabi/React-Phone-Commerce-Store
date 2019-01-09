@@ -1,32 +1,122 @@
-.App {
-  text-align: center;
+:root{
+  --mainblue: #2a2a72;
+  --lightblue: #009ffd;
+  --mainwhite: #f3f3f3;
+  --maindark: #232528;
+  --mainyellow: #ffa400;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+body{
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+  background: var(--mainwhite) !important;
+  color:var(--maindark)!important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.text-title{
+  text-transform: uppercase;
+}
+
+.text-blue{
+  color:var(--mainblue);
+}
+
+.text-bright{
+  color:var(--lightblue);
+}
+
+.card {
+  border-color: transparent !important;
+  transition: all 1s linear !important;
+}
+
+.card-footer{
+  background:transparent !important;
+  border-top: transparent !important;
+  transition: all 1s linear !important;
+}
+
+.card:hover{
+  border:0.04 solid rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2)
+}
+.card-footer:hover{
+  background:rgba(247, 247, 247);
+}
+
+.img-container{
+  position:relative;
+  overflow:hidden;
+}
+
+.card-img-top{
+  transition:all 1s linear;
+}
+
+.img-container:hover .card-img-top{
+  transform:scale(1.2)
+}
+
+.card-btn{
+  position: absolute;
+  bottom:0;
+  right: 0;
+  padding:0.2rem 0.4rem;
+  background: var(--lightblue);
+  border:none;
+  color:var(--mainwhite);
+  font-size: 1.4em;
+  transform:translate(100%,100%);
+  transition:all 1s linear;
+  border-radius: 0.5rem 0 0 0;
+}
+
+.img-container:hover .card-btn{
+  transform: translate(0,0);
+}
+
+.card-btn:hover{
+  color:var(--mainblue);
+  cursor:pointer;
+}
+
+.modalcontainer{
+  position: fixed;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom:0;
+  background: rgba(0,0,0,0.3);
+  display:flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#modal{
+  background:var(--mainwhite)
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-black{
+  background:transparent;
+  text-transform: capitalize;
+  font-size: 0.8rem !important;
+  color: var(--maindark);
+  border-radius: 0 !important;
+  border: 0.1rem solid var(--maindark) !important;
+}
+
+.btn-black:hover{
+  background: var(--maindark) !important;
+  color: var(--mainwhite) !important;
+}
+
+.cart-icon{
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--mainyellow);
+}
+
+.fa-trash{
+  color: red !important;
+  cursor: pointer;
+  font-size: 2rem !important;
 }
